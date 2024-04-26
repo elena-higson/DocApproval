@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_item_stream_m2m_segment">
+    <sys_sg_item_stream_m2m_segment action="INSERT_OR_UPDATE">
+        <item_stream display_value="New Document Aprpovals Item Stream">ba7cbbdaac21021099f4c9ab7b059231</item_stream>
+        <segment display_value="Item Stream Segment">f27cbbda3c2102104d0fed612e290b2f</segment>
+        <sys_class_name>sys_sg_item_stream_m2m_segment</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-04-16 12:11:31</sys_created_on>
+        <sys_id>327cbbdac0210210f2e671e8609c6c2f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="DocsApproval" source="x_1387602_docsap_0">3a7c7bdaa2210210cad24209c0d9b1ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DocsApproval">3a7c7bdaa2210210cad24209c0d9b1ce</sys_scope>
+        <sys_update_name>sys_sg_item_stream_m2m_segment_327cbbdac0210210f2e671e8609c6c2f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-04-16 12:11:31</sys_updated_on>
+    </sys_sg_item_stream_m2m_segment>
+</record_update>

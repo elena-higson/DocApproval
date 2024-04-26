@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_m2m_workspace_header_ux_header_config">
+    <sys_ux_m2m_workspace_header_ux_header_config action="INSERT_OR_UPDATE">
+        <header_config display_value="Document Approval Workspace">f67c7bda34210210d5aaf37e766458e6</header_config>
+        <sys_class_name>sys_ux_m2m_workspace_header_ux_header_config</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-04-16 12:11:26</sys_created_on>
+        <sys_id>f27c7bda162102107b7dc10db2ab48e4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="DocsApproval" source="x_1387602_docsap_0">3a7c7bdaa2210210cad24209c0d9b1ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DocsApproval">3a7c7bdaa2210210cad24209c0d9b1ce</sys_scope>
+        <sys_update_name>sys_ux_m2m_workspace_header_ux_header_config_f27c7bda162102107b7dc10db2ab48e4</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-04-16 12:11:26</sys_updated_on>
+        <workspace_form_header display_value="x_1387602_docsap_0_document_approval_category">4b7cbbdac5210210bfb56450f2dd94bc</workspace_form_header>
+    </sys_ux_m2m_workspace_header_ux_header_config>
+</record_update>

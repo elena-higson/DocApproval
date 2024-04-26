@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_client_script">
+    <sys_ux_client_script action="INSERT_OR_UPDATE">
+        <controller_preset/>
+        <includes/>
+        <macroponent display_value="Record default">be7cbbda032102100113327e4e78c603</macroponent>
+        <name>approveOrDeclineDocument</name>
+        <preset/>
+        <required_translations>[
+    
+]</required_translations>
+        <script><![CDATA[/**
+* @param {params} params
+* @param {api} params.api
+* @param {any} params.event
+* @param {any} params.imports
+* @param {ApiHelpers} params.helpers
+*/
+function handler({api, event, helpers, imports}) {
+    var reason = api.state.approvalComments;
+    if(reason){
+        var action = event.elementId;
+        api.data.update_record_1.execute({'table': api.context.props.table,'recordId': api.context.props.sysId, 'templateFields': 'comments='+reason+'^state='+action, 'useSetDisplayValue': '' });
+        if(action == 'returned'){
+            helpers.modal.close("return_modal");
+        }
+        else if(action == 'rejected'){
+            helpers.modal.close("decline_modal");
+        }
+        else if(action == 'approved'){
+            helpers.modal.close("approve_modal");
+        }
+    }
+}]]></script>
+        <script_api_version>2.0.0</script_api_version>
+        <sys_class_name>sys_ux_client_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-04-16 12:11:34</sys_created_on>
+        <sys_id>7e7c7bda86210210aa88308bedaf24fe</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>approveOrDeclineDocument</sys_name>
+        <sys_package display_value="DocsApproval" source="x_1387602_docsap_0">3a7c7bdaa2210210cad24209c0d9b1ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DocsApproval">3a7c7bdaa2210210cad24209c0d9b1ce</sys_scope>
+        <sys_update_name>sys_ux_client_script_7e7c7bda86210210aa88308bedaf24fe</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-04-16 12:11:34</sys_updated_on>
+        <target>macroponent</target>
+        <type>default</type>
+    </sys_ux_client_script>
+</record_update>
