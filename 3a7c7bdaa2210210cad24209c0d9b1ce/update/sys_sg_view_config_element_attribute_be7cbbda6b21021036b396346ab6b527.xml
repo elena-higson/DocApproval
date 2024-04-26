@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_view_config_element_attribute">
+    <sys_sg_view_config_element_attribute action="INSERT_OR_UPDATE">
+        <description>text_05_FieldValue</description>
+        <name display_value="FieldValue">c2eed5c2b7321010df65f6efce11a9cf</name>
+        <sys_class_name>sys_sg_view_config_element_attribute</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-04-16 12:11:32</sys_created_on>
+        <sys_id>be7cbbda6b21021036b396346ab6b527</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>c2eed5c2b7321010df65f6efce11a9cf</sys_name>
+        <sys_package display_value="DocsApproval" source="x_1387602_docsap_0">3a7c7bdaa2210210cad24209c0d9b1ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DocsApproval">3a7c7bdaa2210210cad24209c0d9b1ce</sys_scope>
+        <sys_update_name>sys_sg_view_config_element_attribute_be7cbbda6b21021036b396346ab6b527</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-04-16 12:11:32</sys_updated_on>
+        <translated_value/>
+        <value>document.sys_created_on</value>
+        <view_config_element display_value="text_05_element">727cbbda6221021016399377342cb52b</view_config_element>
+    </sys_sg_view_config_element_attribute>
+    <sys_translated_text action="delete_multiple" query="documentkey=be7cbbda6b21021036b396346ab6b527"/>
+</record_update>

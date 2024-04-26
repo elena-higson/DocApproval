@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_event">
+    <sys_ux_event action="INSERT_OR_UPDATE">
+        <description/>
+        <event_name>CONTENT_UPDATED_RELAY_7e7cbbda2a210210b22a45923b25af01</event_name>
+        <explicit_api_name/>
+        <interfaces/>
+        <label>Add parameters to URL Relay (List default)</label>
+        <props>[{"name":"params","fieldType":"json","interfaceApiName":null,"label":"Parameters"}]</props>
+        <required_translations>[{"message":"Parameters","comment":""}]</required_translations>
+        <schema_version>1.0.0</schema_version>
+        <sys_class_name>sys_ux_event</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-04-16 12:11:30</sys_created_on>
+        <sys_id>327c7bdabd210210d1c2d031caf004ea</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Add parameters to URL Relay (List default)</sys_name>
+        <sys_package display_value="DocsApproval" source="x_1387602_docsap_0">3a7c7bdaa2210210cad24209c0d9b1ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DocsApproval">3a7c7bdaa2210210cad24209c0d9b1ce</sys_scope>
+        <sys_update_name>sys_ux_event_327c7bdabd210210d1c2d031caf004ea</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-04-16 12:11:30</sys_updated_on>
+    </sys_ux_event>
+    <sys_translated_text action="delete_multiple" query="documentkey=327c7bdabd210210d1c2d031caf004ea"/>
+</record_update>

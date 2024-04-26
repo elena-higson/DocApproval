@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_client_script">
+    <sys_ux_client_script action="INSERT_OR_UPDATE">
+        <controller_preset/>
+        <includes/>
+        <macroponent display_value="Record default">be7cbbda032102100113327e4e78c603</macroponent>
+        <name>return_button/isHidden</name>
+        <preset/>
+        <required_translations>[
+    
+]</required_translations>
+        <script><![CDATA[/**
+ * api.param {params} params
+ * api.param {api} params.api
+ * api.param {TransformApiHelpers} params.helpers
+ */
+function evaluateProperty({
+    api,
+    helpers
+}) {
+    if (api.data.record.form) {
+        if (api.context.props.table == "x_1387602_docsap_0_document_approver") {
+            if (api.data.record.form.fields.state.value == "submitted") {
+                if (api.data.record.form.fields.state.referringRecordId == api.context.session.user.sys_id)
+                    return false;
+            } else
+                return true;
+        } else
+            return true;
+
+    } else {
+        return true;
+    }
+}]]></script>
+        <script_api_version>2.0.0</script_api_version>
+        <sys_class_name>sys_ux_client_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-04-16 12:11:26</sys_created_on>
+        <sys_id>7a7c7bda412102101db86186d5f423f9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>return_button/isHidden</sys_name>
+        <sys_package display_value="DocsApproval" source="x_1387602_docsap_0">3a7c7bdaa2210210cad24209c0d9b1ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DocsApproval">3a7c7bdaa2210210cad24209c0d9b1ce</sys_scope>
+        <sys_update_name>sys_ux_client_script_7a7c7bda412102101db86186d5f423f9</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-04-16 12:11:26</sys_updated_on>
+        <target>macroponent</target>
+        <type>transform</type>
+    </sys_ux_client_script>
+</record_update>

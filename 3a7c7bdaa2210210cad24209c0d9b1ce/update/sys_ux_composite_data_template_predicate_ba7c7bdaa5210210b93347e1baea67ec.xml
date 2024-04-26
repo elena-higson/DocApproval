@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_composite_data_template_predicate">
+    <sys_ux_composite_data_template_predicate action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition/>
+        <custom_condition/>
+        <custom_field_list/>
+        <field_list>number,name,submitter,description,approval_category,status,active,sys_created_on,sys_created_by,sys_updated_on,sys_updated_by,work_notes</field_list>
+        <name>document-view-config</name>
+        <order/>
+        <predicate_bundle display_value="document-approval-view-config-bundle">fe7c7bdaf72102106630e7f1b8ae5ced</predicate_bundle>
+        <required_roles/>
+        <sys_class_name>sys_ux_composite_data_template_predicate</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-04-16 12:11:29</sys_created_on>
+        <sys_id>ba7c7bdaa5210210b93347e1baea67ec</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>document-view-config</sys_name>
+        <sys_package display_value="DocsApproval" source="x_1387602_docsap_0">3a7c7bdaa2210210cad24209c0d9b1ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DocsApproval">3a7c7bdaa2210210cad24209c0d9b1ce</sys_scope>
+        <sys_update_name>sys_ux_composite_data_template_predicate_ba7c7bdaa5210210b93347e1baea67ec</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-04-16 12:11:29</sys_updated_on>
+        <table>x_1387602_docsap_0_document_approval</table>
+        <ux_template display_value="doc-approval-view-all-template">327c7bdaa12102105beb8d21e82185ed</ux_template>
+    </sys_ux_composite_data_template_predicate>
+</record_update>

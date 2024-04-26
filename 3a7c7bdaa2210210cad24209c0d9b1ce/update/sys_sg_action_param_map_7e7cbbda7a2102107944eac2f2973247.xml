@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_action_param_map">
+    <sys_sg_action_param_map action="INSERT_OR_UPDATE">
+        <button display_value="Return document">7a7cbbda5c2102107551962803d26548</button>
+        <item_parameter display_value="comments">f67cbbdaef2102102e4e48ef070a1347</item_parameter>
+        <sys_class_name>sys_sg_action_param_map</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-04-16 12:11:26</sys_created_on>
+        <sys_id>7e7cbbda7a2102107944eac2f2973247</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>f67cbbdaef2102102e4e48ef070a1347</sys_name>
+        <sys_package display_value="DocsApproval" source="x_1387602_docsap_0">3a7c7bdaa2210210cad24209c0d9b1ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DocsApproval">3a7c7bdaa2210210cad24209c0d9b1ce</sys_scope>
+        <sys_update_name>sys_sg_action_param_map_7e7cbbda7a2102107944eac2f2973247</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-04-16 12:11:26</sys_updated_on>
+        <ui_parameter display_value="Reason for returning">727cbbda83210210e6e2de24f7fe0d47</ui_parameter>
+    </sys_sg_action_param_map>
+</record_update>

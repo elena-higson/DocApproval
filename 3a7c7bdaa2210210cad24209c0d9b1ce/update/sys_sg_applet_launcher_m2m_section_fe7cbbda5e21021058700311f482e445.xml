@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_applet_launcher_m2m_section">
+    <sys_sg_applet_launcher_m2m_section action="INSERT_OR_UPDATE">
+        <applet_launcher display_value="DocsApproval">3e7cbbdace21021065c997ca507bb745</applet_launcher>
+        <order>20</order>
+        <section display_value="New Document Approvals">b67cbbda3b2102105f24fae9742e5645</section>
+        <sys_class_name>sys_sg_applet_launcher_m2m_section</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-04-16 12:11:32</sys_created_on>
+        <sys_id>fe7cbbda5e21021058700311f482e445</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="DocsApproval" source="x_1387602_docsap_0">3a7c7bdaa2210210cad24209c0d9b1ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DocsApproval">3a7c7bdaa2210210cad24209c0d9b1ce</sys_scope>
+        <sys_update_name>sys_sg_applet_launcher_m2m_section_fe7cbbda5e21021058700311f482e445</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-04-16 12:11:32</sys_updated_on>
+    </sys_sg_applet_launcher_m2m_section>
+</record_update>

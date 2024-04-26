@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_search_facet">
+    <sys_search_facet action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <ais_facet_name>sn_doc_approval_document_approval.approval_category</ais_facet_name>
+        <label>Category</label>
+        <name>Category</name>
+        <option_limit>10</option_limit>
+        <order>50</order>
+        <search_context_config display_value="Document Approval Portal Search Configuration">327cbbda9a2102105d3b216f2f432e55</search_context_config>
+        <sys_class_name>sys_search_facet</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-04-16 12:11:32</sys_created_on>
+        <sys_id>7e7cbbda53210210de8762ffaaa2b954</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>sn_doc_approval_document_approval.approval_category</sys_name>
+        <sys_package display_value="DocsApproval" source="x_1387602_docsap_0">3a7c7bdaa2210210cad24209c0d9b1ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DocsApproval">3a7c7bdaa2210210cad24209c0d9b1ce</sys_scope>
+        <sys_update_name>sys_search_facet_7e7cbbda53210210de8762ffaaa2b954</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-04-16 12:11:32</sys_updated_on>
+        <type/>
+    </sys_search_facet>
+</record_update>

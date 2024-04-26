@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ux_theme_asset">
+    <sys_ux_theme_asset action="INSERT_OR_UPDATE">
+        <category>image</category>
+        <name>header_logo</name>
+        <sys_class_name>sys_ux_theme_asset</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-04-16 12:11:40</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>f67c7bdaca21021011d5baa79f35a1da</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>header_logo</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="DocsApproval" source="x_1387602_docsap_0">3a7c7bdaa2210210cad24209c0d9b1ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DocsApproval">3a7c7bdaa2210210cad24209c0d9b1ce</sys_scope>
+        <sys_update_name>sys_ux_theme_asset_f67c7bdaca21021011d5baa79f35a1da</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-04-16 12:11:40</sys_updated_on>
+    </sys_ux_theme_asset>
+    <sys_attachment action="INSERT_OR_UPDATE">
+        <average_image_color/>
+        <chunk_size_bytes>700000</chunk_size_bytes>
+        <compressed>true</compressed>
+        <content_type>image/svg+xml</content_type>
+        <file_name>now-logo-white.svg</file_name>
+        <hash>4154310b4c5bdb83623233669adb4537c8f9b2ff596125edb195256baec5c6c8</hash>
+        <image_height/>
+        <image_width/>
+        <size_bytes>4351</size_bytes>
+        <size_compressed>1319</size_compressed>
+        <state>pending</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-04-16 12:11:40</sys_created_on>
+        <sys_id>fe7c7bda0a21021060c48689549a37d8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-04-16 12:11:40</sys_updated_on>
+        <table_name>sys_ux_theme_asset</table_name>
+        <table_sys_id>f67c7bdaca21021011d5baa79f35a1da</table_sys_id>
+    </sys_attachment>
+</record_update>

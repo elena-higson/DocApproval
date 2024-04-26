@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_client_script">
+    <sys_ux_client_script action="INSERT_OR_UPDATE">
+        <controller_preset/>
+        <includes/>
+        <macroponent display_value="Record default">be7cbbda032102100113327e4e78c603</macroponent>
+        <name>showApprovalActionMessage</name>
+        <preset/>
+        <required_translations>[
+    {
+        "code": null,
+        "message": "Document {0} has been {1}.",
+        "comment": null
+    }
+]</required_translations>
+        <script><![CDATA[/**
+ * @param {params} params
+ * @param {api} params.api
+ * @param {any} params.event
+ * @param {any} params.imports
+ */
+async function handler({
+    api,
+    event,
+    helpers,
+    imports
+}) {
+ 
+    try {
+        var translatedString = '';
+        var obj = api.data.record.form.fields;
+        var documentName = "";
+
+        Object.keys(obj).forEach(function(key) {
+            if(key == "document.name")
+            documentName = obj[key].displayValue;
+        });
+
+        translatedString = await helpers.translate("Document {0} has been {1}.", api.data.look_up_record_2.result.document._reference.number.displayValue, obj["state"].displayValue.toLowerCase());
+
+        api.data.record.reloadForm();
+        api.emit('NOW_UXF_PAGE#ADD_NOTIFICATIONS', {
+            items: [{
+                id: 'sev-1',
+                status: 'positive',
+                icon: 'circle-check-outline',
+                content: translatedString,
+                action: {
+                    type: 'dismiss'
+                }
+            }]
+        });
+    } catch (e) {
+        console.error("the error is", e);
+    }
+
+}]]></script>
+        <script_api_version>2.0.0</script_api_version>
+        <sys_class_name>sys_ux_client_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-04-16 12:11:25</sys_created_on>
+        <sys_id>b67c7bdae8210210e32f748ac45d57f9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>showApprovalActionMessage</sys_name>
+        <sys_package display_value="DocsApproval" source="x_1387602_docsap_0">3a7c7bdaa2210210cad24209c0d9b1ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DocsApproval">3a7c7bdaa2210210cad24209c0d9b1ce</sys_scope>
+        <sys_update_name>sys_ux_client_script_b67c7bdae8210210e32f748ac45d57f9</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-04-16 12:11:25</sys_updated_on>
+        <target>macroponent</target>
+        <type>default</type>
+    </sys_ux_client_script>
+</record_update>

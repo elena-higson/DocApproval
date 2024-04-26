@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_chart">
+    <sys_sg_chart action="INSERT_OR_UPDATE">
+        <data_visualization/>
+        <jump_to_screen display_value="Navigate to document approvals this month">f67cbbda3521021059abdce6154ec337</jump_to_screen>
+        <name>Approvals This Month</name>
+        <report display_value="Approvals This Month">7e7cbbdad921021073a765c35ced6d56</report>
+        <sys_class_name>sys_sg_chart</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-04-16 12:11:25</sys_created_on>
+        <sys_id>fe7cbbda7f21021074080550dcf41b35</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Approvals This Month</sys_name>
+        <sys_package display_value="DocsApproval" source="x_1387602_docsap_0">3a7c7bdaa2210210cad24209c0d9b1ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DocsApproval">3a7c7bdaa2210210cad24209c0d9b1ce</sys_scope>
+        <sys_update_name>sys_sg_chart_fe7cbbda7f21021074080550dcf41b35</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-04-16 12:11:25</sys_updated_on>
+        <title/>
+        <type>report</type>
+        <widget/>
+    </sys_sg_chart>
+</record_update>

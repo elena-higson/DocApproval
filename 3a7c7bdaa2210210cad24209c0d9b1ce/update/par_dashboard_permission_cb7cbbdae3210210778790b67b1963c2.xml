@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="par_dashboard_permission">
+    <par_dashboard_permission action="INSERT_OR_UPDATE">
+        <can_read>true</can_read>
+        <can_share>false</can_share>
+        <can_write>true</can_write>
+        <dashboard display_value="Document Approvals">4f7cbbdaad210210131d020b8be801c3</dashboard>
+        <group/>
+        <owner>false</owner>
+        <role display_value="x_1387602_docsap_0.admin" name="x_1387602_docsap_0.admin">8b7cbbda40210210ce9bbd83a987f2da</role>
+        <sys_class_name>par_dashboard_permission</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-04-16 12:11:31</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>cb7cbbdae3210210778790b67b1963c2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>4f7cbbdaad210210131d020b8be801c3</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="DocsApproval" source="x_1387602_docsap_0">3a7c7bdaa2210210cad24209c0d9b1ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DocsApproval">3a7c7bdaa2210210cad24209c0d9b1ce</sys_scope>
+        <sys_update_name>par_dashboard_permission_cb7cbbdae3210210778790b67b1963c2</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-04-16 12:11:31</sys_updated_on>
+        <user/>
+    </par_dashboard_permission>
+</record_update>

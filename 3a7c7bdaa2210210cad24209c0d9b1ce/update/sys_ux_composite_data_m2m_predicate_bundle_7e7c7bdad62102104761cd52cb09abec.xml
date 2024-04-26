@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_composite_data_m2m_predicate_bundle">
+    <sys_ux_composite_data_m2m_predicate_bundle action="INSERT_OR_UPDATE">
+        <dataset display_value="Document Approval Search">ba7c7bdae221021062022d48ae7812ef</dataset>
+        <order/>
+        <predicate_bundle display_value="Document Approval Search Bundle">3e7c7bda57210210011fc5483977d7ed</predicate_bundle>
+        <sys_class_name>sys_ux_composite_data_m2m_predicate_bundle</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-04-16 12:11:26</sys_created_on>
+        <sys_id>7e7c7bdad62102104761cd52cb09abec</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="DocsApproval" source="x_1387602_docsap_0">3a7c7bdaa2210210cad24209c0d9b1ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DocsApproval">3a7c7bdaa2210210cad24209c0d9b1ce</sys_scope>
+        <sys_update_name>sys_ux_composite_data_m2m_predicate_bundle_7e7c7bdad62102104761cd52cb09abec</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-04-16 12:11:26</sys_updated_on>
+    </sys_ux_composite_data_m2m_predicate_bundle>
+</record_update>

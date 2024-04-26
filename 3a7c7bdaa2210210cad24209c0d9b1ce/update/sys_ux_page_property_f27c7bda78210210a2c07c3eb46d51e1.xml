@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ux_page_property">
+    <sys_ux_page_property action="INSERT_OR_UPDATE">
+        <choices/>
+        <description/>
+        <name>global_search_configurations</name>
+        <page display_value="DocsApproval Portal">0f7cbbdab1210210357fd61bb823cfd9</page>
+        <required_translations>[]</required_translations>
+        <route/>
+        <suffix/>
+        <sys_class_name>sys_ux_page_property</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-04-16 12:11:29</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>global</sys_domain_path>
+        <sys_id>f27c7bda78210210a2c07c3eb46d51e1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>global_search_configurations</sys_name>
+        <sys_package display_value="DocsApproval" source="x_1387602_docsap_0">3a7c7bdaa2210210cad24209c0d9b1ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DocsApproval">3a7c7bdaa2210210cad24209c0d9b1ce</sys_scope>
+        <sys_update_name>sys_ux_page_property_f27c7bda78210210a2c07c3eb46d51e1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-04-16 12:11:29</sys_updated_on>
+        <type>json</type>
+        <unique_name>x_1387602_docsap_0.0f7cbbdab1210210357fd61bb823cfd9.root.global_search_configurations</unique_name>
+        <value>{&#13;
+  "globalSearchContextConfigId": "327cbbda9a2102105d3b216f2f432e55"&#13;
+}</value>
+    </sys_ux_page_property>
+    <sys_translated_text action="delete_multiple" query="documentkey=f27c7bda78210210a2c07c3eb46d51e1"/>
+</record_update>
