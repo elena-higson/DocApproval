@@ -1,0 +1,1882 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>false</active>
+        <annotation>Fetches and populates threat lookup results for provided input TISC observables</annotation>
+        <attributes/>
+        <authored_on_release_version>25000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <compiler_build>glide-Tue_Sep_26_17_27_15_IST_2023.zip</compiler_build>
+        <copied_from>3da28db643913110baf06e434ab8f2ea</copied_from>
+        <copied_from_name>TISC CrowdStrike Falcon Intellig</copied_from_name>
+        <description>Fetches and populates threat lookup results for provided input TISC observables</description>
+        <flow_priority/>
+        <generation_source/>
+        <internal_name>copy_of_tisc_crowdstrike_falcon_intelligence_threat_lookup_integration_v1</internal_name>
+        <label_cache>[{"name":"a71def78-bac5-4fc8-a95d-62d4bd135074.error_message","label":"7 - Fetch Lookup Results from CrowdStrike➛Error Message","reference_display":"Error Message","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"1ab5a35d-45eb-4f74-98ab-ad7833990bfb"}},{"name":"cea79d5b-5f5b-48a8-81c7-aac3d24ebdf6.enrichment_integration_record.sys_id","label":"2➛Enrichment Integration Record➛Sys ID","reference":"","reference_display":"Sys ID","type":"GUID","base_type":"GUID","parent_table_name":"sn_sec_tisc_enrichment_integration","column_name":"sys_id"},{"name":"subflow.capability_implementation_execution.capability_implementation.integration.sys_id","label":"Input➛Capability Implementation Execution➛Capability Implementation➛Configuration➛Sys ID","reference":"","reference_display":"Sys ID","type":"GUID","base_type":"GUID","parent_table_name":"sn_sec_core_integration_item","column_name":"sys_id"},{"name":"subflow.input_parameters","label":"Input➛Input Parameters","reference":"","reference_display":"","type":"json","base_type":"json","column_name":"","attributes":{"uiType":"json","uiTypeLabel":"JSON","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"651545ef-1b19-48f6-8c69-62d4985b0369","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"subflow.capability_implementation_execution","label":"Input➛Capability Implementation Execution","reference":"sn_sec_cmn_capability_implementation_execution","reference_display":"Capability Implementation Execution","type":"reference","base_type":"reference","column_name":"","attributes":{"uiType":"reference","uiTypeLabel":"Reference","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"4bc11bc0-d1d0-4699-8567-b01c3934cbf8","sourceUiUniqueId":"","sourceType":"","sourceId":""}},{"name":"cea79d5b-5f5b-48a8-81c7-aac3d24ebdf6.is_record_found","label":"2 - Get Enrichment Integration Record➛Is Record Found","reference_display":"Is Record Found","type":"boolean","base_type":"boolean","attributes":{"uiType":"boolean","uiTypeLabel":"True/False","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"ec0cc108-5186-489e-b558-68452dc4da18"}},{"name":"cea79d5b-5f5b-48a8-81c7-aac3d24ebdf6.enrichment_integration_record.sys_domain","label":"2 - Get Enrichment Integration Record➛Enrichment Integration Record➛Domain","reference":"sys_user_group","reference_display":"Group","type":"domain_id","base_type":"domain_id","parent_table_name":"sn_sec_tisc_enrichment_integration","column_name":"sys_domain"},{"name":"6ea81529-bcf0-48ce-af43-856bbb370cf5.observables_value_sysid_map","label":"6 - Get Observables Value SysId Map From Capability Input Parameters➛Observables Value SysId Map","reference_display":"Observables Value SysId Map","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"67711f75-f127-4c0d-9fbb-037c7cdaba27"}},{"name":"a71def78-bac5-4fc8-a95d-62d4bd135074.response_body","label":"7 - Fetch Lookup Results from CrowdStrike➛Response Body","reference_display":"Response Body","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"c8d9c57e-860b-4c0a-bb84-ff487baa97a8"}},{"name":"c547d7da-5ee8-40b8-a3b7-dadcdf0e5992.error_message","label":"12 - Process Lookup Results➛Error Message","reference_display":"Error Message","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"9e2b2641-5de7-4775-8892-e21813fcba09"}},{"name":"c547d7da-5ee8-40b8-a3b7-dadcdf0e5992.status_message","label":"12 - Process Lookup Results➛Status Message","reference_display":"Status Message","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"ddd0a4fe-7a98-41f2-93f9-b6f95322394e"}},{"name":"0bc1a45b-fee2-461c-9aba-8419d0c753b6.error_message","label":"7 - Fetch Lookup Results from CrowdStrike➛Error Message","reference_display":"Error Message","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"1ab5a35d-45eb-4f74-98ab-ad7833990bfb"}},{"name":"0bc1a45b-fee2-461c-9aba-8419d0c753b6.response_body","label":"7 - Fetch Lookup Results from CrowdStrike➛Response Body","reference_display":"Response Body","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"c8d9c57e-860b-4c0a-bb84-ff487baa97a8"}}]</label_cache>
+        <latest_snapshot/>
+        <master_snapshot/>
+        <name>Copy of TISC CrowdStrike Falcon Intelligence Threat Lookup Integration V1</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id/>
+        <run_as>system</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>draft</status>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:44</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>a209b69a931a021021dffde08bba103b</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Copy of TISC CrowdStrike Falcon Intelligence Threat Lookup Integration V1</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="DocsApproval" source="x_1387602_docsap_0">3a7c7bdaa2210210cad24209c0d9b1ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DocsApproval">3a7c7bdaa2210210cad24209c0d9b1ce</sys_scope>
+        <sys_update_name>sys_hub_flow_a209b69a931a021021dffde08bba103b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:47</sys_updated_on>
+        <type>subflow</type>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=a209b69a931a021021dffde08bba103b"/>
+    <sys_variable_value action="delete_multiple" query="document_key=a209b69a931a021021dffde08bba103b"/>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_flow_output_a209b69a931a021021dffde08bba103b^id=a209b69a931a021021dffde08bba103b"/>
+    <sys_hub_trigger_instance action="delete_multiple" query="flow=a209b69a931a021021dffde08bba103b"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=a209b69a931a021021dffde08bba103b"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=a209b69a931a021021dffde08bba103b^sys_idNOT INa209b69a931a021021dffde08bba103c"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>a209b69a931a021021dffde08bba103b</id>
+        <name>Copy of TISC CrowdStrike Falcon Intelligence Threat Lookup Integration V1</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:44</sys_created_on>
+        <sys_id>a209b69a931a021021dffde08bba103c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:44</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=a209b69a931a021021dffde08bba103c"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=a209b69a931a021021dffde08bba103b^sys_idNOT IN3609b69a931a021021dffde08bba1058,6209b69a931a021021dffde08bba1043,ee09b69a931a021021dffde08bba1053"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=domain_id,uiTypeLabel=Domain ID,uiUniqueId=bb86be1d-ffa9-46b3-8c21-77ef1c68d537</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>domain_id</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">domain_id</internal_type>
+        <label>Domain ID</label>
+        <mandatory>false</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Copy of TISC CrowdStrike Falcon Intelligence Threat Lookup Integration V1">a209b69a931a021021dffde08bba103b</model>
+        <model_id>a209b69a931a021021dffde08bba103b</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_a209b69a931a021021dffde08bba103b</name>
+        <next_element/>
+        <order>3</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:45</sys_created_on>
+        <sys_id>3609b69a931a021021dffde08bba1058</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="DocsApproval">3a7c7bdaa2210210cad24209c0d9b1ce</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:45</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=3609b69a931a021021dffde08bba1058"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=json,uiTypeLabel=JSON,uiUniqueId=651545ef-1b19-48f6-8c69-62d4985b0369</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>input_parameters</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="JSON">json</internal_type>
+        <label>Input Parameters</label>
+        <mandatory>false</mandatory>
+        <max_length>4000</max_length>
+        <model display_value="Copy of TISC CrowdStrike Falcon Intelligence Threat Lookup Integration V1">a209b69a931a021021dffde08bba103b</model>
+        <model_id>a209b69a931a021021dffde08bba103b</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_a209b69a931a021021dffde08bba103b</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:45</sys_created_on>
+        <sys_id>6209b69a931a021021dffde08bba1043</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="DocsApproval">3a7c7bdaa2210210cad24209c0d9b1ce</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:45</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=6209b69a931a021021dffde08bba1043"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference,uiUniqueId=4bc11bc0-d1d0-4699-8567-b01c3934cbf8</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table>sn_sec_cmn_capability_implementation_execution</choice_table>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>capability_implementation_execution</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>Capability Implementation Execution</label>
+        <mandatory>false</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Copy of TISC CrowdStrike Falcon Intelligence Threat Lookup Integration V1">a209b69a931a021021dffde08bba103b</model>
+        <model_id>a209b69a931a021021dffde08bba103b</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_a209b69a931a021021dffde08bba103b</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="sn_sec_cmn_capability_implementation_execution">sn_sec_cmn_capability_implementation_execution</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:45</sys_created_on>
+        <sys_id>ee09b69a931a021021dffde08bba1053</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="DocsApproval">3a7c7bdaa2210210cad24209c0d9b1ce</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:45</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=ee09b69a931a021021dffde08bba1053"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=a209b69a931a021021dffde08bba103b^sys_idNOT IN3e09b69a931a021021dffde08bba106d,ba09b69a931a021021dffde08bba1069,fe09b69a931a021021dffde08bba1070"/>
+    <sys_hub_flow_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=string,uiTypeLabel=String,uiUniqueId=e57aab9d-6fb4-4065-abb4-c82141ee2c86</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>status_message</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="String">string</internal_type>
+        <label>Status Message</label>
+        <mandatory>false</mandatory>
+        <max_length>8000</max_length>
+        <model display_value="Copy of TISC CrowdStrike Falcon Intelligence Threat Lookup Integration V1">a209b69a931a021021dffde08bba103b</model>
+        <model_id>a209b69a931a021021dffde08bba103b</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_output_a209b69a931a021021dffde08bba103b</name>
+        <next_element/>
+        <order>2</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:45</sys_created_on>
+        <sys_id>3e09b69a931a021021dffde08bba106d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="DocsApproval">3a7c7bdaa2210210cad24209c0d9b1ce</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:45</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=3e09b69a931a021021dffde08bba106d"/>
+    <sys_hub_flow_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=json,uiTypeLabel=JSON,uiUniqueId=dcdc99a1-a542-4d2a-a696-47e016a423d1</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>result</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="JSON">json</internal_type>
+        <label>Result</label>
+        <mandatory>false</mandatory>
+        <max_length>4000</max_length>
+        <model display_value="Copy of TISC CrowdStrike Falcon Intelligence Threat Lookup Integration V1">a209b69a931a021021dffde08bba103b</model>
+        <model_id>a209b69a931a021021dffde08bba103b</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_output_a209b69a931a021021dffde08bba103b</name>
+        <next_element/>
+        <order>1</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:45</sys_created_on>
+        <sys_id>ba09b69a931a021021dffde08bba1069</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="DocsApproval">3a7c7bdaa2210210cad24209c0d9b1ce</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:45</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=ba09b69a931a021021dffde08bba1069"/>
+    <sys_hub_flow_output action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=choice,uiTypeLabel=Choice,uiUniqueId=a1b8aab2-a9a5-4c59-9c49-74878d2cd8c8</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice>3</choice>
+        <choice_field>state</choice_field>
+        <choice_table>sn_sec_cmn_capability_implementation_execution</choice_table>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>state</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Choice">choice</internal_type>
+        <label>State</label>
+        <mandatory>false</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Copy of TISC CrowdStrike Falcon Intelligence Threat Lookup Integration V1">a209b69a931a021021dffde08bba103b</model>
+        <model_id>a209b69a931a021021dffde08bba103b</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_output_a209b69a931a021021dffde08bba103b</name>
+        <next_element/>
+        <order>3</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:45</sys_created_on>
+        <sys_id>fe09b69a931a021021dffde08bba1070</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="DocsApproval">3a7c7bdaa2210210cad24209c0d9b1ce</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:45</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_output>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=fe09b69a931a021021dffde08bba1070"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=a209b69a931a021021dffde08bba103b"/>
+    <sys_hub_action_instance action="delete_multiple" query="flow=a209b69a931a021021dffde08bba103b^sys_idNOT IN0b09b69a931a021021dffde08bba10d3,4309b69a931a021021dffde08bba10b6,8709b69a931a021021dffde08bba10dd,8f09b69a931a021021dffde08bba10bd,b209b69a931a021021dffde08bba10ac"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Fetch Lookup Results from CrowdStrike">907904bf431db110baf06e434ab8f23b</action_type>
+        <action_type_parent display_value="Fetch Lookup Results from CrowdStrike">7e5708ff43d9b110baf06e434ab8f250</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>907904bf431db110baf06e434ab8f23b</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Copy of TISC CrowdStrike Falcon Intelligence Threat Lookup Integration V1">a209b69a931a021021dffde08bba103b</flow>
+        <generation_source/>
+        <order>7</order>
+        <parent_ui_id>9bb5457c-6fbc-4265-9498-1f0ceff1fe4b</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:46</sys_created_on>
+        <sys_id>0b09b69a931a021021dffde08bba10d3</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="DocsApproval">3a7c7bdaa2210210cad24209c0d9b1ce</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:46</sys_updated_on>
+        <ui_id>0bc1a45b-fee2-461c-9aba-8419d0c753b6</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=0b09b69a931a021021dffde08bba10d3"/>
+    <sys_element_mapping action="delete_multiple" query="id=0b09b69a931a021021dffde08bba10d3"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>domain_id</field>
+        <id>0b09b69a931a021021dffde08bba10d3</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:46</sys_created_on>
+        <sys_id>4709b69a931a021021dffde08bba10d5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:46</sys_updated_on>
+        <table>var__m_sys_hub_action_input_907904bf431db110baf06e434ab8f23b</table>
+        <value>{{cea79d5b-5f5b-48a8-81c7-aac3d24ebdf6.enrichment_integration_record.sys_domain}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>integration_sysid</field>
+        <id>0b09b69a931a021021dffde08bba10d3</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:46</sys_created_on>
+        <sys_id>cb09b69a931a021021dffde08bba10d5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:46</sys_updated_on>
+        <table>var__m_sys_hub_action_input_907904bf431db110baf06e434ab8f23b</table>
+        <value>{{cea79d5b-5f5b-48a8-81c7-aac3d24ebdf6.enrichment_integration_record.sys_id}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>observables_value_sysid_map</field>
+        <id>0b09b69a931a021021dffde08bba10d3</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:46</sys_created_on>
+        <sys_id>0b09b69a931a021021dffde08bba10d5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:46</sys_updated_on>
+        <table>var__m_sys_hub_action_input_907904bf431db110baf06e434ab8f23b</table>
+        <value>{{6ea81529-bcf0-48ce-af43-856bbb370cf5.observables_value_sysid_map}}</value>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=0b09b69a931a021021dffde08bba10d3^sys_idNOT IN0b09b69a931a021021dffde08bba10d4"/>
+    <sys_hub_input_scripts action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <input_name>domain_id</input_name>
+        <instance>0b09b69a931a021021dffde08bba10d3</instance>
+        <referenced_table>sys_hub_action_instance</referenced_table>
+        <script>{"domain_id":{"scriptActive":true,"script":"/*\n**Access Flow/Action data using the fd_data object. Script must return a value.\n**Available options display upon pressing \".\" after fd_data\n**example: var shortDesc \u003d fd_data.trigger.current.short_description;\n**return shortDesc;\n*/\nreturn fd_data._2__get_enrichment_integration_record.enrichment_integration_record.sys_domain+\"\";"}}</script>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:46</sys_created_on>
+        <sys_id>0b09b69a931a021021dffde08bba10d4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:46</sys_updated_on>
+    </sys_hub_input_scripts>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=0b09b69a931a021021dffde08bba10d3"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Get Enrichment Integration Record">a56481a74399b110baf06e434ab8f20d</action_type>
+        <action_type_parent display_value="Get Enrichment Integration Record">1cf245ab4359b110baf06e434ab8f296</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>a56481a74399b110baf06e434ab8f20d</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Copy of TISC CrowdStrike Falcon Intelligence Threat Lookup Integration V1">a209b69a931a021021dffde08bba103b</flow>
+        <generation_source/>
+        <order>2</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:46</sys_created_on>
+        <sys_id>4309b69a931a021021dffde08bba10b6</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="DocsApproval">3a7c7bdaa2210210cad24209c0d9b1ce</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:46</sys_updated_on>
+        <ui_id>cea79d5b-5f5b-48a8-81c7-aac3d24ebdf6</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=4309b69a931a021021dffde08bba10b6"/>
+    <sys_element_mapping action="delete_multiple" query="id=4309b69a931a021021dffde08bba10b6"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>security_integration_item_sysid</field>
+        <id>4309b69a931a021021dffde08bba10b6</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:46</sys_created_on>
+        <sys_id>c309b69a931a021021dffde08bba10b7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:46</sys_updated_on>
+        <table>var__m_sys_hub_action_input_a56481a74399b110baf06e434ab8f20d</table>
+        <value>{{subflow.capability_implementation_execution.capability_implementation.integration.sys_id}}</value>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=4309b69a931a021021dffde08bba10b6"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=4309b69a931a021021dffde08bba10b6"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Process Lookup Results">7addbdbb43917510baf06e434ab8f227</action_type>
+        <action_type_parent display_value="Process Lookup Results">9d3db17743917510baf06e434ab8f2e4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>7addbdbb43917510baf06e434ab8f227</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Copy of TISC CrowdStrike Falcon Intelligence Threat Lookup Integration V1">a209b69a931a021021dffde08bba103b</flow>
+        <generation_source/>
+        <order>12</order>
+        <parent_ui_id>d8173187-b1e8-423e-bb9e-fdef3acf1438</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:46</sys_created_on>
+        <sys_id>8709b69a931a021021dffde08bba10dd</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="DocsApproval">3a7c7bdaa2210210cad24209c0d9b1ce</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:46</sys_updated_on>
+        <ui_id>c547d7da-5ee8-40b8-a3b7-dadcdf0e5992</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=8709b69a931a021021dffde08bba10dd"/>
+    <sys_element_mapping action="delete_multiple" query="id=8709b69a931a021021dffde08bba10dd"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>domain_id</field>
+        <id>8709b69a931a021021dffde08bba10dd</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:46</sys_created_on>
+        <sys_id>4309b69a931a021021dffde08bba10df</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:46</sys_updated_on>
+        <table>var__m_sys_hub_action_input_7addbdbb43917510baf06e434ab8f227</table>
+        <value>{{cea79d5b-5f5b-48a8-81c7-aac3d24ebdf6.enrichment_integration_record.sys_domain}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>integration_sysid</field>
+        <id>8709b69a931a021021dffde08bba10dd</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:46</sys_created_on>
+        <sys_id>8b09b69a931a021021dffde08bba10df</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:46</sys_updated_on>
+        <table>var__m_sys_hub_action_input_7addbdbb43917510baf06e434ab8f227</table>
+        <value>{{cea79d5b-5f5b-48a8-81c7-aac3d24ebdf6.enrichment_integration_record.sys_id}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>lookup_result_response</field>
+        <id>8709b69a931a021021dffde08bba10dd</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:46</sys_created_on>
+        <sys_id>c709b69a931a021021dffde08bba10df</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:46</sys_updated_on>
+        <table>var__m_sys_hub_action_input_7addbdbb43917510baf06e434ab8f227</table>
+        <value>{{0bc1a45b-fee2-461c-9aba-8419d0c753b6.response_body}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>observables_values_sysid_map</field>
+        <id>8709b69a931a021021dffde08bba10dd</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:46</sys_created_on>
+        <sys_id>0709b69a931a021021dffde08bba10df</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:46</sys_updated_on>
+        <table>var__m_sys_hub_action_input_7addbdbb43917510baf06e434ab8f227</table>
+        <value>{{6ea81529-bcf0-48ce-af43-856bbb370cf5.observables_value_sysid_map}}</value>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=8709b69a931a021021dffde08bba10dd^sys_idNOT IN0b09b69a931a021021dffde08bba10de"/>
+    <sys_hub_input_scripts action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <input_name>domain_id</input_name>
+        <instance>8709b69a931a021021dffde08bba10dd</instance>
+        <referenced_table>sys_hub_action_instance</referenced_table>
+        <script>{"domain_id":{"scriptActive":true,"script":"/*\n**Access Flow/Action data using the fd_data object. Script must return a value.\n**Available options display upon pressing \".\" after fd_data\n**example: var shortDesc \u003d fd_data.trigger.current.short_description;\n**return shortDesc;\n*/\nreturn fd_data._2__get_enrichment_integration_record.enrichment_integration_record.sys_domain+\"\";"}}</script>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:46</sys_created_on>
+        <sys_id>0b09b69a931a021021dffde08bba10de</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:46</sys_updated_on>
+    </sys_hub_input_scripts>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=8709b69a931a021021dffde08bba10dd"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Get Observables Value SysId Map From Capability Input Parameters">46c678eb4315b110baf06e434ab8f2a0</action_type>
+        <action_type_parent display_value="Get Observables Value SysId Map From Capability Input Parameters">e151bcaf4351b110baf06e434ab8f271</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>46c678eb4315b110baf06e434ab8f2a0</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Copy of TISC CrowdStrike Falcon Intelligence Threat Lookup Integration V1">a209b69a931a021021dffde08bba103b</flow>
+        <generation_source/>
+        <order>6</order>
+        <parent_ui_id>9bb5457c-6fbc-4265-9498-1f0ceff1fe4b</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:46</sys_created_on>
+        <sys_id>8f09b69a931a021021dffde08bba10bd</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="DocsApproval">3a7c7bdaa2210210cad24209c0d9b1ce</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:46</sys_updated_on>
+        <ui_id>6ea81529-bcf0-48ce-af43-856bbb370cf5</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=8f09b69a931a021021dffde08bba10bd"/>
+    <sys_element_mapping action="delete_multiple" query="id=8f09b69a931a021021dffde08bba10bd"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>domain_id</field>
+        <id>8f09b69a931a021021dffde08bba10bd</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:46</sys_created_on>
+        <sys_id>8309b69a931a021021dffde08bba10bf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:46</sys_updated_on>
+        <table>var__m_sys_hub_action_input_46c678eb4315b110baf06e434ab8f2a0</table>
+        <value>{{cea79d5b-5f5b-48a8-81c7-aac3d24ebdf6.enrichment_integration_record.sys_domain}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>input_parameters</field>
+        <id>8f09b69a931a021021dffde08bba10bd</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:46</sys_created_on>
+        <sys_id>4709b69a931a021021dffde08bba10bf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:46</sys_updated_on>
+        <table>var__m_sys_hub_action_input_46c678eb4315b110baf06e434ab8f2a0</table>
+        <value>{{subflow.input_parameters}}</value>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=8f09b69a931a021021dffde08bba10bd"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=8f09b69a931a021021dffde08bba10bd"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Add Worknote Link to Context">fd4a0fb70f003300ecf0cc52ff767e2a</action_type>
+        <action_type_parent display_value="Add Worknote Link to Context">ae790f770f003300ecf0cc52ff767efa</action_type_parent>
+        <attributes/>
+        <comment>Set current flow context to Flow Context Link field of capability implementation execution</comment>
+        <compiled_snapshot>fd4a0fb70f003300ecf0cc52ff767e2a</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Copy of TISC CrowdStrike Falcon Intelligence Threat Lookup Integration V1">a209b69a931a021021dffde08bba103b</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:46</sys_created_on>
+        <sys_id>b209b69a931a021021dffde08bba10ac</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="DocsApproval">3a7c7bdaa2210210cad24209c0d9b1ce</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:46</sys_updated_on>
+        <ui_id>32fe11e4-0369-4bae-b338-12cecbaa4c56</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=b209b69a931a021021dffde08bba10ac"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>b209b69a931a021021dffde08bba10ac</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:46</sys_created_on>
+        <sys_id>3209b69a931a021021dffde08bba10af</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:46</sys_updated_on>
+        <value>sn_sec_cmn_capability_implementation_execution</value>
+        <variable display_value="Table">f14a0fb70f003300ecf0cc52ff767e2c</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>b209b69a931a021021dffde08bba10ac</document_key>
+        <order>3</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:46</sys_created_on>
+        <sys_id>7e09b69a931a021021dffde08bba10ae</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:46</sys_updated_on>
+        <value>flow_context_link</value>
+        <variable display_value="Journal Field">ca4a0fb70f003300ecf0cc52ff767e45</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=b209b69a931a021021dffde08bba10ac"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>journal_field</field>
+        <id>b209b69a931a021021dffde08bba10ac</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:46</sys_created_on>
+        <sys_id>7609b69a931a021021dffde08bba10ae</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:46</sys_updated_on>
+        <table>var__m_sys_hub_action_input_fd4a0fb70f003300ecf0cc52ff767e2a</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>b209b69a931a021021dffde08bba10ac</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:46</sys_created_on>
+        <sys_id>fa09b69a931a021021dffde08bba10ae</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:46</sys_updated_on>
+        <table>var__m_sys_hub_action_input_fd4a0fb70f003300ecf0cc52ff767e2a</table>
+        <value>{{subflow.capability_implementation_execution}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table</field>
+        <id>b209b69a931a021021dffde08bba10ac</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:46</sys_created_on>
+        <sys_id>3a09b69a931a021021dffde08bba10ae</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:46</sys_updated_on>
+        <table>var__m_sys_hub_action_input_fd4a0fb70f003300ecf0cc52ff767e2a</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=b209b69a931a021021dffde08bba10ac"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=b209b69a931a021021dffde08bba10ac"/>
+    <sys_hub_sub_flow_instance action="delete_multiple" query="flow=a209b69a931a021021dffde08bba103b"/>
+    <sys_hub_flow_logic action="delete_multiple" query="flow=a209b69a931a021021dffde08bba103b^sys_idNOT IN3209b69a931a021021dffde08bba1081,3209b69a931a021021dffde08bba109c,3a09b69a931a021021dffde08bba1094,3e09b69a931a021021dffde08bba1086,3e09b69a931a021021dffde08bba108e,3e09b69a931a021021dffde08bba10a1,7609b69a931a021021dffde08bba1098,7a09b69a931a021021dffde08bba108a,ba09b69a931a021021dffde08bba107b,ba09b69a931a021021dffde08bba1091,be09b69a931a021021dffde08bba1083,be09b69a931a021021dffde08bba109e,f609b69a931a021021dffde08bba10a5"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">7a09b69a931a021021dffde08bba1080</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Copy of TISC CrowdStrike Falcon Intelligence Threat Lookup Integration V1">a209b69a931a021021dffde08bba103b</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <inputs/>
+        <logic_definition display_value="End">d176605ea76103004f27b0d2187901c7</logic_definition>
+        <order>4</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id>9f861859-d49b-4f31-8dbd-bc0e475d4e37</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:45</sys_created_on>
+        <sys_id>3209b69a931a021021dffde08bba1081</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:45</sys_updated_on>
+        <ui_id>bea757ca-fa33-4dbd-82fe-de6bc5237ed7</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=3209b69a931a021021dffde08bba1081"/>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_flow_output_a209b69a931a021021dffde08bba103b^id=3209b69a931a021021dffde08bba1081"/>
+    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=3209b69a931a021021dffde08bba1081"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=3209b69a931a021021dffde08bba1081"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">7a09b69a931a021021dffde08bba109b</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Copy of TISC CrowdStrike Falcon Intelligence Threat Lookup Integration V1">a209b69a931a021021dffde08bba103b</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <inputs/>
+        <logic_definition display_value="End">d176605ea76103004f27b0d2187901c7</logic_definition>
+        <order>15</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id>c8bccb28-05ac-4998-8e2b-ce5747e1dceb</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:46</sys_created_on>
+        <sys_id>3209b69a931a021021dffde08bba109c</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:46</sys_updated_on>
+        <ui_id>049f263b-b55a-4047-8df7-16d388281f57</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=3209b69a931a021021dffde08bba109c"/>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_flow_output_a209b69a931a021021dffde08bba103b^id=3209b69a931a021021dffde08bba109c"/>
+    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=3209b69a931a021021dffde08bba109c"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=3209b69a931a021021dffde08bba109c"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">7209b69a931a021021dffde08bba1094</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Copy of TISC CrowdStrike Falcon Intelligence Threat Lookup Integration V1">a209b69a931a021021dffde08bba103b</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <inputs/>
+        <inputs/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>13</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id>d8173187-b1e8-423e-bb9e-fdef3acf1438</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:46</sys_created_on>
+        <sys_id>3a09b69a931a021021dffde08bba1094</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:46</sys_updated_on>
+        <ui_id>c8bccb28-05ac-4998-8e2b-ce5747e1dceb</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=3a09b69a931a021021dffde08bba1094"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_flow_logic</document>
+        <document_key>3a09b69a931a021021dffde08bba1094</document_key>
+        <order>10</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:46</sys_created_on>
+        <sys_id>7a09b69a931a021021dffde08bba1097</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:46</sys_updated_on>
+        <value>Error has occurred when processing response payload</value>
+        <variable display_value="Condition Label">f0af19c1c32632002841b63b12d3aea3</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=3a09b69a931a021021dffde08bba1094"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition</field>
+        <id>3a09b69a931a021021dffde08bba1094</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:46</sys_created_on>
+        <sys_id>f609b69a931a021021dffde08bba1097</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:46</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value>{{c547d7da-5ee8-40b8-a3b7-dadcdf0e5992.error_message}}!=</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition_name</field>
+        <id>3a09b69a931a021021dffde08bba1094</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:46</sys_created_on>
+        <sys_id>3609b69a931a021021dffde08bba1097</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:46</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_flow_output_a209b69a931a021021dffde08bba103b^id=3a09b69a931a021021dffde08bba1094"/>
+    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=3a09b69a931a021021dffde08bba1094"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=3a09b69a931a021021dffde08bba1094"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">7609b69a931a021021dffde08bba1086</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Copy of TISC CrowdStrike Falcon Intelligence Threat Lookup Integration V1">a209b69a931a021021dffde08bba103b</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <inputs/>
+        <inputs/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>8</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id>9bb5457c-6fbc-4265-9498-1f0ceff1fe4b</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:45</sys_created_on>
+        <sys_id>3e09b69a931a021021dffde08bba1086</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:45</sys_updated_on>
+        <ui_id>d07dfee1-c00f-4fad-a99f-e1a7b4d2f0c7</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=3e09b69a931a021021dffde08bba1086"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_flow_logic</document>
+        <document_key>3e09b69a931a021021dffde08bba1086</document_key>
+        <order>10</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:46</sys_created_on>
+        <sys_id>7e09b69a931a021021dffde08bba1089</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:46</sys_updated_on>
+        <value>Lookup results are not successfully fetched from CrowdStrike</value>
+        <variable display_value="Condition Label">f0af19c1c32632002841b63b12d3aea3</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=3e09b69a931a021021dffde08bba1086"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition</field>
+        <id>3e09b69a931a021021dffde08bba1086</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:46</sys_created_on>
+        <sys_id>fa09b69a931a021021dffde08bba1089</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:46</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value>{{0bc1a45b-fee2-461c-9aba-8419d0c753b6.error_message}}!=</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition_name</field>
+        <id>3e09b69a931a021021dffde08bba1086</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:46</sys_created_on>
+        <sys_id>3a09b69a931a021021dffde08bba1089</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:46</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_flow_output_a209b69a931a021021dffde08bba103b^id=3e09b69a931a021021dffde08bba1086"/>
+    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=3e09b69a931a021021dffde08bba1086"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=3e09b69a931a021021dffde08bba1086"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">7609b69a931a021021dffde08bba108e</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Copy of TISC CrowdStrike Falcon Intelligence Threat Lookup Integration V1">a209b69a931a021021dffde08bba103b</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <inputs/>
+        <logic_definition display_value="End">d176605ea76103004f27b0d2187901c7</logic_definition>
+        <order>10</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id>d07dfee1-c00f-4fad-a99f-e1a7b4d2f0c7</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:46</sys_created_on>
+        <sys_id>3e09b69a931a021021dffde08bba108e</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:46</sys_updated_on>
+        <ui_id>cfe3decc-2a31-4b2e-8512-7c72c6cf22d0</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=3e09b69a931a021021dffde08bba108e"/>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_flow_output_a209b69a931a021021dffde08bba103b^id=3e09b69a931a021021dffde08bba108e"/>
+    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=3e09b69a931a021021dffde08bba108e"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=3e09b69a931a021021dffde08bba108e"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">7609b69a931a021021dffde08bba10a1</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Copy of TISC CrowdStrike Falcon Intelligence Threat Lookup Integration V1">a209b69a931a021021dffde08bba103b</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <inputs/>
+        <logic_definition display_value="Assign Subflow Outputs">df4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>17</order>
+        <outputs_assigned>status_message,state</outputs_assigned>
+        <outputs_to_assign/>
+        <outputs_to_assign/>
+        <parent_ui_id>fbe0d623-a0db-4826-8e5d-e74432634b97</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:46</sys_created_on>
+        <sys_id>3e09b69a931a021021dffde08bba10a1</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:46</sys_updated_on>
+        <ui_id>cb3c021a-1078-4b1c-b5cf-1647fe734c69</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=3e09b69a931a021021dffde08bba10a1"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_flow_logic</document>
+        <document_key>3e09b69a931a021021dffde08bba10a1</document_key>
+        <order>3</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:46</sys_created_on>
+        <sys_id>fa09b69a931a021021dffde08bba10a4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:46</sys_updated_on>
+        <value>COMPLETE</value>
+        <variable display_value="State">fe09b69a931a021021dffde08bba1070</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=3e09b69a931a021021dffde08bba10a1"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>state</field>
+        <id>3e09b69a931a021021dffde08bba10a1</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:46</sys_created_on>
+        <sys_id>7a09b69a931a021021dffde08bba10a4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:46</sys_updated_on>
+        <table>var__m_sys_hub_flow_output_a209b69a931a021021dffde08bba103b</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>status_message</field>
+        <id>3e09b69a931a021021dffde08bba10a1</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:46</sys_created_on>
+        <sys_id>b609b69a931a021021dffde08bba10a4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:46</sys_updated_on>
+        <table>var__m_sys_hub_flow_output_a209b69a931a021021dffde08bba103b</table>
+        <value>{{c547d7da-5ee8-40b8-a3b7-dadcdf0e5992.status_message}}</value>
+    </sys_element_mapping>
+    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=3e09b69a931a021021dffde08bba10a1"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=3e09b69a931a021021dffde08bba10a1"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">be09b69a931a021021dffde08bba1097</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Copy of TISC CrowdStrike Falcon Intelligence Threat Lookup Integration V1">a209b69a931a021021dffde08bba103b</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <inputs/>
+        <logic_definition display_value="Assign Subflow Outputs">df4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>14</order>
+        <outputs_assigned>status_message,state</outputs_assigned>
+        <outputs_to_assign/>
+        <outputs_to_assign/>
+        <parent_ui_id>c8bccb28-05ac-4998-8e2b-ce5747e1dceb</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:46</sys_created_on>
+        <sys_id>7609b69a931a021021dffde08bba1098</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:46</sys_updated_on>
+        <ui_id>ffa6ba4c-aa39-4568-ae05-bf245be205de</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=7609b69a931a021021dffde08bba1098"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_flow_logic</document>
+        <document_key>7609b69a931a021021dffde08bba1098</document_key>
+        <order>3</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:46</sys_created_on>
+        <sys_id>3609b69a931a021021dffde08bba109b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:46</sys_updated_on>
+        <value>ERROR</value>
+        <variable display_value="State">fe09b69a931a021021dffde08bba1070</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=7609b69a931a021021dffde08bba1098"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>state</field>
+        <id>7609b69a931a021021dffde08bba1098</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:46</sys_created_on>
+        <sys_id>b209b69a931a021021dffde08bba109b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:46</sys_updated_on>
+        <table>var__m_sys_hub_flow_output_a209b69a931a021021dffde08bba103b</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>status_message</field>
+        <id>7609b69a931a021021dffde08bba1098</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:46</sys_created_on>
+        <sys_id>fe09b69a931a021021dffde08bba109a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:46</sys_updated_on>
+        <table>var__m_sys_hub_flow_output_a209b69a931a021021dffde08bba103b</table>
+        <value>{{c547d7da-5ee8-40b8-a3b7-dadcdf0e5992.error_message}}</value>
+    </sys_element_mapping>
+    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=7609b69a931a021021dffde08bba1098"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=7609b69a931a021021dffde08bba1098"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">b209b69a931a021021dffde08bba108a</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Copy of TISC CrowdStrike Falcon Intelligence Threat Lookup Integration V1">a209b69a931a021021dffde08bba103b</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <inputs/>
+        <logic_definition display_value="Assign Subflow Outputs">df4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>9</order>
+        <outputs_assigned>status_message,state</outputs_assigned>
+        <outputs_to_assign/>
+        <outputs_to_assign/>
+        <parent_ui_id>d07dfee1-c00f-4fad-a99f-e1a7b4d2f0c7</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:46</sys_created_on>
+        <sys_id>7a09b69a931a021021dffde08bba108a</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:46</sys_updated_on>
+        <ui_id>562d7a57-4ecf-497e-a947-496618574e75</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=7a09b69a931a021021dffde08bba108a"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_flow_logic</document>
+        <document_key>7a09b69a931a021021dffde08bba108a</document_key>
+        <order>3</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:46</sys_created_on>
+        <sys_id>be09b69a931a021021dffde08bba108d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:46</sys_updated_on>
+        <value>ERROR</value>
+        <variable display_value="State">fe09b69a931a021021dffde08bba1070</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=7a09b69a931a021021dffde08bba108a"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>state</field>
+        <id>7a09b69a931a021021dffde08bba108a</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:46</sys_created_on>
+        <sys_id>3e09b69a931a021021dffde08bba108d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:46</sys_updated_on>
+        <table>var__m_sys_hub_flow_output_a209b69a931a021021dffde08bba103b</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>status_message</field>
+        <id>7a09b69a931a021021dffde08bba108a</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:46</sys_created_on>
+        <sys_id>7a09b69a931a021021dffde08bba108d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:46</sys_updated_on>
+        <table>var__m_sys_hub_flow_output_a209b69a931a021021dffde08bba103b</table>
+        <value>{{a71def78-bac5-4fc8-a95d-62d4bd135074.error_message}}</value>
+    </sys_element_mapping>
+    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=7a09b69a931a021021dffde08bba108a"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=7a09b69a931a021021dffde08bba108a"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">be09b69a931a021021dffde08bba107a</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Copy of TISC CrowdStrike Falcon Intelligence Threat Lookup Integration V1">a209b69a931a021021dffde08bba103b</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <inputs/>
+        <inputs/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>3</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:45</sys_created_on>
+        <sys_id>ba09b69a931a021021dffde08bba107b</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:45</sys_updated_on>
+        <ui_id>9f861859-d49b-4f31-8dbd-bc0e475d4e37</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=ba09b69a931a021021dffde08bba107b"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_flow_logic</document>
+        <document_key>ba09b69a931a021021dffde08bba107b</document_key>
+        <order>10</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:45</sys_created_on>
+        <sys_id>fa09b69a931a021021dffde08bba107f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:45</sys_updated_on>
+        <value>Enrichment integration record is not found</value>
+        <variable display_value="Condition Label">f0af19c1c32632002841b63b12d3aea3</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=ba09b69a931a021021dffde08bba107b"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition</field>
+        <id>ba09b69a931a021021dffde08bba107b</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:45</sys_created_on>
+        <sys_id>7a09b69a931a021021dffde08bba107f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:45</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value>{{cea79d5b-5f5b-48a8-81c7-aac3d24ebdf6.is_record_found}}=false</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition_name</field>
+        <id>ba09b69a931a021021dffde08bba107b</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:45</sys_created_on>
+        <sys_id>b209b69a931a021021dffde08bba107f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:45</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_flow_output_a209b69a931a021021dffde08bba103b^id=ba09b69a931a021021dffde08bba107b"/>
+    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=ba09b69a931a021021dffde08bba107b"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=ba09b69a931a021021dffde08bba107b"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">f209b69a931a021021dffde08bba1091</block>
+        <comment/>
+        <connected_to>d07dfee1-c00f-4fad-a99f-e1a7b4d2f0c7</connected_to>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Copy of TISC CrowdStrike Falcon Intelligence Threat Lookup Integration V1">a209b69a931a021021dffde08bba103b</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <inputs/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>11</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id>9bb5457c-6fbc-4265-9498-1f0ceff1fe4b</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:46</sys_created_on>
+        <sys_id>ba09b69a931a021021dffde08bba1091</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:46</sys_updated_on>
+        <ui_id>d8173187-b1e8-423e-bb9e-fdef3acf1438</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=ba09b69a931a021021dffde08bba1091"/>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_flow_output_a209b69a931a021021dffde08bba103b^id=ba09b69a931a021021dffde08bba1091"/>
+    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=ba09b69a931a021021dffde08bba1091"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=ba09b69a931a021021dffde08bba1091"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">f609b69a931a021021dffde08bba1083</block>
+        <comment/>
+        <connected_to>9f861859-d49b-4f31-8dbd-bc0e475d4e37</connected_to>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Copy of TISC CrowdStrike Falcon Intelligence Threat Lookup Integration V1">a209b69a931a021021dffde08bba103b</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <inputs/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>5</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:45</sys_created_on>
+        <sys_id>be09b69a931a021021dffde08bba1083</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:45</sys_updated_on>
+        <ui_id>9bb5457c-6fbc-4265-9498-1f0ceff1fe4b</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=be09b69a931a021021dffde08bba1083"/>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_flow_output_a209b69a931a021021dffde08bba103b^id=be09b69a931a021021dffde08bba1083"/>
+    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=be09b69a931a021021dffde08bba1083"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=be09b69a931a021021dffde08bba1083"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">f609b69a931a021021dffde08bba109e</block>
+        <comment/>
+        <connected_to>c8bccb28-05ac-4998-8e2b-ce5747e1dceb</connected_to>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Copy of TISC CrowdStrike Falcon Intelligence Threat Lookup Integration V1">a209b69a931a021021dffde08bba103b</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <inputs/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>16</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id>d8173187-b1e8-423e-bb9e-fdef3acf1438</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:46</sys_created_on>
+        <sys_id>be09b69a931a021021dffde08bba109e</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:46</sys_updated_on>
+        <ui_id>fbe0d623-a0db-4826-8e5d-e74432634b97</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=be09b69a931a021021dffde08bba109e"/>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_flow_output_a209b69a931a021021dffde08bba103b^id=be09b69a931a021021dffde08bba109e"/>
+    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=be09b69a931a021021dffde08bba109e"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=be09b69a931a021021dffde08bba109e"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">3209b69a931a021021dffde08bba10a5</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Copy of TISC CrowdStrike Falcon Intelligence Threat Lookup Integration V1">a209b69a931a021021dffde08bba103b</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <inputs/>
+        <logic_definition display_value="End">d176605ea76103004f27b0d2187901c7</logic_definition>
+        <order>18</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id>fbe0d623-a0db-4826-8e5d-e74432634b97</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:46</sys_created_on>
+        <sys_id>f609b69a931a021021dffde08bba10a5</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:46</sys_updated_on>
+        <ui_id>4eb39d7e-5fa0-4178-931b-3ba6edceb915</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=f609b69a931a021021dffde08bba10a5"/>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_flow_output_a209b69a931a021021dffde08bba103b^id=f609b69a931a021021dffde08bba10a5"/>
+    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=f609b69a931a021021dffde08bba10a5"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=f609b69a931a021021dffde08bba10a5"/>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=a209b69a931a021021dffde08bba103b"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=a209b69a931a021021dffde08bba103b"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_a209b69a931a021021dffde08bba103b^sys_idNOT IN2209b69a931a021021dffde08bba1053,3a09b69a931a021021dffde08bba105a,7609b69a931a021021dffde08bba1057"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>input_parameters</element>
+        <help/>
+        <hint/>
+        <label>Input Parameters</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_a209b69a931a021021dffde08bba103b</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:45</sys_created_on>
+        <sys_id>2209b69a931a021021dffde08bba1053</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="DocsApproval" source="x_1387602_docsap_0">3a7c7bdaa2210210cad24209c0d9b1ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DocsApproval">3a7c7bdaa2210210cad24209c0d9b1ce</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:45</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>domain_id</element>
+        <help/>
+        <hint/>
+        <label>Domain ID</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_a209b69a931a021021dffde08bba103b</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:45</sys_created_on>
+        <sys_id>3a09b69a931a021021dffde08bba105a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="DocsApproval" source="x_1387602_docsap_0">3a7c7bdaa2210210cad24209c0d9b1ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DocsApproval">3a7c7bdaa2210210cad24209c0d9b1ce</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:45</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>capability_implementation_execution</element>
+        <help/>
+        <hint/>
+        <label>Capability Implementation Execution</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_a209b69a931a021021dffde08bba103b</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:45</sys_created_on>
+        <sys_id>7609b69a931a021021dffde08bba1057</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="DocsApproval" source="x_1387602_docsap_0">3a7c7bdaa2210210cad24209c0d9b1ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DocsApproval">3a7c7bdaa2210210cad24209c0d9b1ce</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:45</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_a209b69a931a021021dffde08bba103b"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_output_a209b69a931a021021dffde08bba103b^sys_idNOT IN3209b69a931a021021dffde08bba1070,3209b69a931a021021dffde08bba1078,7e09b69a931a021021dffde08bba106c"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>status_message</element>
+        <help/>
+        <hint/>
+        <label>Status Message</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_output_a209b69a931a021021dffde08bba103b</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:45</sys_created_on>
+        <sys_id>3209b69a931a021021dffde08bba1070</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="DocsApproval" source="x_1387602_docsap_0">3a7c7bdaa2210210cad24209c0d9b1ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DocsApproval">3a7c7bdaa2210210cad24209c0d9b1ce</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:45</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>state</element>
+        <help/>
+        <hint/>
+        <label>State</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_output_a209b69a931a021021dffde08bba103b</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:45</sys_created_on>
+        <sys_id>3209b69a931a021021dffde08bba1078</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="DocsApproval" source="x_1387602_docsap_0">3a7c7bdaa2210210cad24209c0d9b1ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DocsApproval">3a7c7bdaa2210210cad24209c0d9b1ce</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:45</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>result</element>
+        <help/>
+        <hint/>
+        <label>Result</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_output_a209b69a931a021021dffde08bba103b</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-05-23 14:03:45</sys_created_on>
+        <sys_id>7e09b69a931a021021dffde08bba106c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="DocsApproval" source="x_1387602_docsap_0">3a7c7bdaa2210210cad24209c0d9b1ce</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DocsApproval">3a7c7bdaa2210210cad24209c0d9b1ce</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-05-23 14:03:45</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_a209b69a931a021021dffde08bba103b^sys_idNOT IN7a09b69a931a021021dffde08bba1072,3209b69a931a021021dffde08bba1073,f609b69a931a021021dffde08bba1073,be09b69a931a021021dffde08bba1073,7609b69a931a021021dffde08bba1074,3e09b69a931a021021dffde08bba1074"/>
+    <sys_choice field="state" table="var__m_sys_hub_flow_output_a209b69a931a021021dffde08bba103b">
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Queued</label>
+            <language>en</language>
+            <name>var__m_sys_hub_flow_output_a209b69a931a021021dffde08bba103b</name>
+            <sequence>1</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-05-23 14:03:45</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>7a09b69a931a021021dffde08bba1072</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-05-23 14:03:45</sys_updated_on>
+            <value>QUEUED</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>In Progress</label>
+            <language>en</language>
+            <name>var__m_sys_hub_flow_output_a209b69a931a021021dffde08bba103b</name>
+            <sequence>2</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-05-23 14:03:45</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>3209b69a931a021021dffde08bba1073</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-05-23 14:03:45</sys_updated_on>
+            <value>IN_PROGRESS</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Waiting</label>
+            <language>en</language>
+            <name>var__m_sys_hub_flow_output_a209b69a931a021021dffde08bba103b</name>
+            <sequence>3</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-05-23 14:03:45</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>f609b69a931a021021dffde08bba1073</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-05-23 14:03:45</sys_updated_on>
+            <value>WAITING</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Complete</label>
+            <language>en</language>
+            <name>var__m_sys_hub_flow_output_a209b69a931a021021dffde08bba103b</name>
+            <sequence>4</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-05-23 14:03:45</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>be09b69a931a021021dffde08bba1073</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-05-23 14:03:45</sys_updated_on>
+            <value>COMPLETE</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Error</label>
+            <language>en</language>
+            <name>var__m_sys_hub_flow_output_a209b69a931a021021dffde08bba103b</name>
+            <sequence>5</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-05-23 14:03:45</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>7609b69a931a021021dffde08bba1074</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-05-23 14:03:45</sys_updated_on>
+            <value>ERROR</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Cancelled</label>
+            <language>en</language>
+            <name>var__m_sys_hub_flow_output_a209b69a931a021021dffde08bba103b</name>
+            <sequence>6</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-05-23 14:03:45</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>3e09b69a931a021021dffde08bba1074</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-05-23 14:03:45</sys_updated_on>
+            <value>CANCELLED</value>
+        </sys_choice>
+    </sys_choice>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=a209b69a931a021021dffde08bba103b"/>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=a209b69a931a021021dffde08bba103b"/>
+</record_update>
